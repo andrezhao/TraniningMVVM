@@ -34,6 +34,8 @@ class MainActivity : BaseActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+        mContext = this
+        showToast("登录成功")
 
 
     }
@@ -41,4 +43,5 @@ class MainActivity : BaseActivity() {
     override fun initData() {
 
     }
+
 }

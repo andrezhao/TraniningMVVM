@@ -5,6 +5,7 @@ import android.app.Application
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.os.Looper
 import android.util.Log
 import android.view.KeyEvent
 import android.widget.Toast
@@ -72,7 +73,16 @@ abstract class BaseActivity : AppCompatActivity() {
     }
 
     fun showToast(msg: String) {
-        kotlin.run { Toast.makeText(mContext, msg, Toast.LENGTH_LONG).show() }
+        //   runOnUiThread { Toast.makeText(mContext, msg, Toast.LENGTH_LONG).show() }
+
+        if (("main").equals(Thread.currentThread().getName())) {
+            Toast.makeText(mContext, msg, Toast.LENGTH_LONG).show()
+        } else {
+            Looper.prepare()
+            Toast.makeText(mContext, msg, Toast.LENGTH_LONG).show()
+            Looper.loop()
+        }
+
 
     }
 

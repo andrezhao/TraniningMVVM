@@ -59,7 +59,8 @@ class LoginActivity : AppCompatActivity() {
                 showLoginFailed(loginResult.error)
                 //  val intent = Intent(this, MainActivity::class.java)
                 //  startActivity(intent)
-                Toast.makeText(this, "", Toast.LENGTH_LONG)
+                runOnUiThread { Toast.makeText(this, "", Toast.LENGTH_LONG) }
+
             }
             if (loginResult.success != null) {
                 loading.visibility = View.GONE
