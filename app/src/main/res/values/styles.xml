@@ -1,0 +1,42 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="FullscreenTheme" parent="AppTheme">
+        <item name="android:actionBarStyle">@style/FullscreenActionBarStyle</item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="metaButtonBarStyle">?android:attr/buttonBarStyle</item>
+        <item name="metaButtonBarButtonStyle">?android:attr/buttonBarButtonStyle</item>
+    </style>
+
+    <style name="SplashTheme" parent="AppTheme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+
+    <style name="FullscreenActionBarStyle" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@color/black_overlay</item>
+    </style>
+    <!--qiulinhe:2015年8月7日11:19:22： 保证金背景风格 -->
+
+    <style name="margintran">
+        <!-- 设置允许窗口半透明 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 引用Android系统的动画半透明样式 -->
+        <item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item>
+        <!-- 设定窗口背景颜色 -->
+        <item name="android:windowBackground">@drawable/dialogfragment</item>
+        <!-- 隐藏窗口标题栏 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 设定文字前景色 -->
+        <item name="android:colorForeground">@color/common_white</item>
+
+    </style>
+</resources>
