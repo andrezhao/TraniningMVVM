@@ -59,18 +59,21 @@ class LoginActivity : AppCompatActivity() {
                 showLoginFailed(loginResult.error)
                 //  val intent = Intent(this, MainActivity::class.java)
                 //  startActivity(intent)
+                Toast.makeText(this, "", Toast.LENGTH_LONG)
             }
             if (loginResult.success != null) {
                 loading.visibility = View.GONE
                 updateUiWithUser(loginResult.success)
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
+                setResult(Activity.RESULT_OK)
+                finish()
+
             }
-            setResult(Activity.RESULT_OK)
 
             //Complete and destroy login activity once successful
-            /* finish()
-             val intent = Intent(this, MainActivity::class.java)
+
+            /* val intent = Intent(this, MainActivity::class.java)
                startActivity(intent)*/
         })
 

@@ -72,8 +72,8 @@ abstract class BaseActivity : AppCompatActivity() {
     }
 
     fun showToast(msg: String) {
+        kotlin.run { Toast.makeText(mContext, msg, Toast.LENGTH_LONG).show() }
 
-        Toast.makeText(mContext, msg, Toast.LENGTH_LONG).show()
     }
 
 
