@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.widget.Button
@@ -17,6 +18,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.traniningmvvm.R
 import com.example.traniningmvvm.ui.activity.MainActivity
+import com.example.traniningmvvm.utils.LogUtils
 
 
 class LoginActivity : AppCompatActivity() {
@@ -63,6 +65,7 @@ class LoginActivity : AppCompatActivity() {
 
             }
             if (loginResult.success != null) {
+                LogUtils.d("LoginActivity", "-----------------------")
                 loading.visibility = View.GONE
                 updateUiWithUser(loginResult.success)
                 val intent = Intent(this, MainActivity::class.java)
@@ -71,11 +74,7 @@ class LoginActivity : AppCompatActivity() {
                 finish()
 
             }
-
-            //Complete and destroy login activity once successful
-
-            /* val intent = Intent(this, MainActivity::class.java)
-               startActivity(intent)*/
+            
         })
 
         username.afterTextChanged {
